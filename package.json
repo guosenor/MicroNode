@@ -19,7 +19,9 @@
   "homepage": "https://github.com/guosenor/MicroNode#readme",
   "dependencies": {
     "consul": "^0.37.0",
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "mysql2": "^2.1.0",
+    "sequelize": "^6.3.3"
   },
   "devDependencies": {
     "@types/consul": "^0.23.34",
