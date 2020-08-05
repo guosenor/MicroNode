@@ -1,7 +1,7 @@
 import express from 'express';
 import * as config from './config';
 import { register } from './registry';
-// import models from './model';
+import models from './model';
 import RPCServer from './RPCServer';
 
 register();
@@ -13,7 +13,15 @@ app.get('/check', async (req, res) => {
   // if (Array.isArray(list)) {
   //   console.log(JSON.stringify(list[0]));
   // }
-  // console.log(await models.User.findOne());
+  console.log(
+    JSON.stringify(await models.User.findOne({
+      include: [
+        {
+          model: models.Group,
+        },
+      ],
+    })),
+  );
   res.send({ message: 'success' });
 });
 app.listen(config.default.port);
